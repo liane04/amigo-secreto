@@ -47,7 +47,7 @@ function displayQuestion() {
     const question = questions[currentQuestionIndex];
 
     // Atualizar a imagem de fundo
-    document.body.style.backgroundImage = question.background;
+    document.body.style.backgroundImage = `url('${question.background}')`;
 
     // Mostrar a pergunta
     questionElement.textContent = question.question;
@@ -59,7 +59,7 @@ function displayQuestion() {
     for (const [key, value] of Object.entries(question.options)) {
         const button = document.createElement("button");
         button.textContent = `${key}. ${value}`;
-        button.onclick = () => checkAnswer(key); // Verificar a resposta ao clicar
+        button.onclick = () => checkAnswer(key);
         optionsContainer.appendChild(button);
     }
 }
