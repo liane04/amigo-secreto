@@ -3,7 +3,8 @@ const questions = [
         question: "O teu amigo secreto é...",
         options: { A: "Fantástico como uma estrela de cinema", B: "Maravilhosa e sempre cheia de surpresas" },
         correct: "B",
-        background: "img/harry1.jpg", // Define a imagem de fundo
+        background: "#007BFF", // Cor hexagonal
+
     },
     {
         question: "A tua amiga secreta pertence...",
@@ -29,7 +30,7 @@ const questions = [
     },
     {
         question: "Qual destas atividades já fizemos juntas...",
-        options: { A: "Depilação a laser enquanto reclamamos da dor", B: "Discutir se o laser também podia polir o teu carro" },
+        options: { A: "Trocar videos e umas boas gargalhadas", B: "Discutir se o laser também podia polir o teu carro" },
         correct: "A",
     },
     {
