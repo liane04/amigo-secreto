@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descobre Quem Sou!!</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Descobre Quem Sou!</h1>
+    <div id="game">
+        <div id="question-container">
+            <p id="question">De que cor é o meu cabelo?</p>
+            <div id="options">
+                <button onclick="checkAnswer('A')">A. Castanho</button>
+                <button onclick="checkAnswer('B')">B. Loiro</button>
+                <button onclick="checkAnswer('C')">C. Ruivo</button>
+            </div>
+        </div>
+        <div id="character-container">
+            <h2>O Bonequinho:</h2>
+            <div id="character">
+                <!-- Partes do bonequinho serão adicionadas aqui -->
+            </div>
+        </div>
+    </div>
+    <p id="message"></p>
+    <script src="script.js"></script>
+</body>
+</html>

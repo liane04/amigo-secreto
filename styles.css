@@ -1,0 +1,76 @@
+/* Configurações gerais */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 10px; /* Adicionar espaço para ecrãs pequenos */
+}
+
+/* Estilo dos botões */
+#options button {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    width: 100%; /* Botões ocupam toda a largura no telemóvel */
+    max-width: 300px; /* Não exceder 300px em ecrãs maiores */
+}
+
+#options button:hover {
+    background-color: #0056b3;
+}
+
+/* Container principal */
+#game {
+    display: flex;
+    flex-direction: column; /* Coluna para ecrãs pequenos */
+    align-items: center;
+}
+
+/* Container do personagem */
+#character-container {
+    margin-top: 20px;
+}
+
+#character {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 200px; /* Ajustar largura máxima do bonequinho */
+    height: auto; /* Proporções automáticas */
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    position: relative;
+}
+
+/* Partes do personagem */
+.character-part {
+    position: absolute;
+    width: 100%; /* Ajuste automático em função do container */
+    height: 100px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+/* Texto adaptável */
+h1, p, #message {
+    font-size: 18px; /* Ajuste de tamanho no telemóvel */
+}
+
+/* Para ecrãs grandes */
+@media (min-width: 768px) {
+    #game {
+        flex-direction: row; /* Colocar perguntas e personagem lado a lado */
+        justify-content: space-around;
+    }
+
+    #character {
+        max-width: 300px; /* Bonequinho maior em ecrãs grandes */
+    }
+}
