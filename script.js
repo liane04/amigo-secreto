@@ -1,24 +1,52 @@
 const questions = [
     {
-        question: "De que cor é o meu cabelo?",
-        options: { A: "Castanho", B: "Loiro", C: "Ruivo" },
-        correct: "A",
+        question: "O teu amigo secreto é...",
+        options: { A: "Fantástico como uma estrela de cinema", B: "Maravilhosa e sempre cheia de surpresas" },
+        correct: "B",
+        part: "genero",
+        image: "genero.png",
+    },
+    {
+        question: "A tua amiga secreta pertence...",
+        options: { A: "A uma organização secreta chamada ROPE", B: "A um clube misterioso 'Clínicas NM' com superpoderes" },
+        correct: "B",
+        part: "grupo",
+        image: "grupo.png",
+    },
+    {
+        question: "Qual é o meu animal preferido...",
+        options: { A: "Um pinguim estiloso e positive", B: "Um gato que acha que é o dono da casa" },
+        correct: "B",
+        part: "animal",
+        image: "gato.png",
+    },
+    {
+        question: "O meu cabelo é...",
+        options: { A: "Castanho e liso", B: "Castanho e encaracolado" },
+        correct: "B",
         part: "cabelo",
-        image: "cabelo_castanho.png",
+        image: "cabelo.png",
     },
     {
-        question: "De que cor são os meus olhos?",
-        options: { A: "Azuis", B: "Verdes", C: "Castanhos" },
-        correct: "C",
-        part: "olhos",
-        image: "olhos_castanhos.png",
+        question: "Eu e tu temos em comum...",
+        options: { A: "Um cérebro brilhante mas com pouco juízo", B: "Já termos enfrentado a temida missão de depilação a laser no cu (porque coragem não nos falta)" },
+        correct: "B",
+        part: "ligacao",
+        image: "laser.png",
     },
     {
-        question: "Qual é a minha altura?",
-        options: { A: "1.59m", B: "1.70m", C: "1.80m" },
+        question: "Qual destas atividades já fizemos juntas...",
+        options: { A: "Depilação a laser enquanto reclamamos da dor", B: "Discutir se o laser também podia polir o teu carro" },
         correct: "A",
-        part: "altura",
-        image: "corpo.png",
+        part: "atividade",
+        image: "atividade.png",
+    },
+    {
+        question: "Já sabes quem sou eu?",
+        options: { A: "Beatriz Duarte (a lendária amiga secreta)", B: "Outra pessoa que gostaria de ser tão fixe quanto eu" },
+        correct: "A",
+        part: "identidade",
+        image: "beatriz.png",
     },
 ];
 
@@ -74,3 +102,4 @@ function addCharacterPart(part, image) {
 
 // Inicializar o jogo
 displayQuestion();
+
