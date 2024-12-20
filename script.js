@@ -121,7 +121,7 @@ function checkAnswer(selected) {
                 displayQuestion(); // Mostra a próxima pergunta
             } else {
                 // Exibir mensagem final e imagem
-                message.textContent = "Conseguiste!!!";
+                message.textContent = "Conseguiste! Descobriste quem sou!!!";
                 message.style.color = "#FFD700"; // Cor dourada
 
                 // Limpar o conteúdo anterior
@@ -138,6 +138,10 @@ function checkAnswer(selected) {
 
                 imageContainer.innerHTML = ""; // Limpa imagens anteriores
                 imageContainer.appendChild(finalImage);
+
+                // Tocar a música feliz ao final
+                const finalMusic = new Audio("som/joanaa.mp3");
+                finalMusic.play();
             }
         }, 1000); // Aguarda 1 segundo antes de avançar
     } else {
@@ -145,6 +149,7 @@ function checkAnswer(selected) {
         message.style.color = "red";
     }
 }
+
 
 
 
