@@ -22,8 +22,8 @@ const questions = [
     },
     {
         question: "O meu cabelo é...",
-        options: { A: "Castanho e liso", B: "Castanho e encaracolado" },
-        correct: "B",
+        options: { A: "Castanho e encaracolado", B: "Castanho e liso" },
+        correct: "A",
         background: "#FF4C4C", // Vermelho natalício
         image: "img/luffy1.png", // Caminho para a imagem
     },
@@ -107,41 +107,48 @@ function checkAnswer(selected) {
 
     // Verificar se a resposta está correta
     if (selected === question.correct) {
+        // Tocar o som ao acertar
+        const audio = new Audio("som/1.mp4");
+        audio.play();
+
         message.textContent = "Resposta certa! 🎉";
         message.style.color = "green";
 
-        // Avançar para a próxima pergunta
-        currentQuestionIndex++;
-        if (currentQuestionIndex < questions.length) {
-            setTimeout(() => {
-                message.textContent = "";
-                displayQuestion(); // Mostrar a próxima pergunta
-            }, 1000);
-        } else {
-            // Exibir mensagem final e imagem
-            message.textContent = "Conseguiste! Descobriste quem sou!!!";
-            message.style.color = "#FFD700"; // Cor dourada
+        // Avançar para a próxima pergunta após 1 segundo
+        setTimeout(() => {
+            currentQuestionIndex++; // Incrementa o índice da pergunta
+            if (currentQuestionIndex < questions.length) {
+                displayQuestion(); // Mostra a próxima pergunta
+            } else {
+                // Exibir mensagem final e imagem
+                message.textContent = "Conseguiste! Descobriste quem sou!!!";
+                message.style.color = "#FFD700"; // Cor dourada
 
-            // Limpar todo o conteúdo anterior
-            questionContainer.innerHTML = ""; // Limpa o contêiner de perguntas
-            optionsContainer.innerHTML = ""; // Limpa as opções (redundância)
+                // Limpar o conteúdo anterior
+                questionContainer.innerHTML = "";
+                optionsContainer.innerHTML = "";
 
-            // Adicionar apenas a imagem final
-            const finalImage = document.createElement("img");
-            finalImage.src = "img/irma.jpg"; // Caminho da imagem final
-            finalImage.alt = "Foto final";
-            finalImage.style.width = "300px"; // Tamanho da imagem
-            finalImage.style.height = "auto";
-            finalImage.style.marginTop = "20px";
+                // Mostrar a imagem final
+                const finalImage = document.createElement("img");
+                finalImage.src = "img/irma.jpg"; // Caminho da imagem final
+                finalImage.alt = "Foto final";
+                finalImage.style.width = "300px"; // Tamanho da imagem
+                finalImage.style.height = "auto";
+                finalImage.style.marginTop = "20px";
 
-            imageContainer.innerHTML = ""; // Limpar imagens anteriores
-            imageContainer.appendChild(finalImage);
-        }
+                imageContainer.innerHTML = ""; // Limpa imagens anteriores
+                imageContainer.appendChild(finalImage);
+            }
+        }, 1000); // Aguarda 1 segundo antes de avançar
     } else {
         message.textContent = "Resposta errada. Tenta novamente!";
         message.style.color = "red";
     }
 }
+
+
+
+
 
 
 
