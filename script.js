@@ -121,7 +121,7 @@ function checkAnswer(selected) {
                 displayQuestion(); // Mostra a próxima pergunta
             } else {
                 // Exibir mensagem final e imagem
-                message.textContent = "Conseguiste! Descobriste quem sou!!!";
+                message.textContent = "Conseguiste!!!";
                 message.style.color = "#FFD700"; // Cor dourada
 
                 // Limpar o conteúdo anterior
