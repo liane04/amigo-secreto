@@ -102,6 +102,8 @@ function checkAnswer(selected) {
     const question = questions[currentQuestionIndex];
     const message = document.getElementById("message");
     const imageContainer = document.getElementById("image-container");
+    const questionContainer = document.getElementById("question-container");
+    const optionsContainer = document.getElementById("options");
 
     // Verificar se a resposta está correta
     if (selected === question.correct) {
@@ -120,7 +122,11 @@ function checkAnswer(selected) {
             message.textContent = "Conseguiste! Descobriste quem sou!!!";
             message.style.color = "#FFD700"; // Cor dourada
 
-            // Limpar o contêiner de opções e adicionar a imagem final
+            // Limpar todo o conteúdo anterior
+            questionContainer.innerHTML = ""; // Limpa o contêiner de perguntas
+            optionsContainer.innerHTML = ""; // Limpa as opções (redundância)
+
+            // Adicionar apenas a imagem final
             const finalImage = document.createElement("img");
             finalImage.src = "img/irma.jpg"; // Caminho da imagem final
             finalImage.alt = "Foto final";
@@ -136,6 +142,7 @@ function checkAnswer(selected) {
         message.style.color = "red";
     }
 }
+
 
 
 // Inicializar o jogo
