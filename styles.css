@@ -43,3 +43,15 @@ h1 {
     text-shadow: 1px 1px 3px #000;
 }
 
+#image-container {
+    display: flex;
+    justify-content: center;
+    gap: 5px; /* Aproxima as imagens */
+}
+
+#image-container img {
+    border-radius: 10px;
+}
+
+
+

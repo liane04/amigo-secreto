@@ -87,7 +87,6 @@ function displayQuestion() {
          // Adicionar borda apenas para a imagem "blur.JPEG"
         
         if (question.image === "img/blur.JPEG" || question.image === "img/irma.jpg") {
-        img.style.border = "5px solidrgb(0, 0, 0)"; // Borda dourada
         img.style.borderRadius = "10px"; // Borda arredondada
         }
         if (question.image === "img/harry4.png") {
