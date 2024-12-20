@@ -3,40 +3,43 @@ const questions = [
         question: "O teu amigo secreto é...",
         options: { A: "Fantástico como uma estrela de cinema", B: "Maravilhosa e sempre cheia de surpresas" },
         correct: "B",
-        background: "#007BFF", // Cor hexagonal
-
+        background: "#FF4C4C", // Vermelho natalício
     },
     {
         question: "A tua amiga secreta pertence...",
         options: { A: "A uma organização secreta chamada ROPE", B: "A um clube misterioso 'Clínicas NM' com superpoderes" },
         correct: "B",
-        background: "url('imagem2.jpg')",
+        background: "#4CAF50", // Verde típico de Natal
     },
     {
         question: "Qual é o meu animal preferido...",
         options: { A: "Um pinguim estiloso e positive", B: "Um gato que acha que é o dono da casa" },
         correct: "B",
-        background: "url('imagem3.jpg')",
+        background: "#FFD700", // Dourado natalício
     },
     {
         question: "O meu cabelo é...",
         options: { A: "Castanho e liso", B: "Castanho e encaracolado" },
         correct: "B",
+        background: "#FF5733", // Vermelho com tom quente
     },
     {
         question: "Eu e tu temos em comum...",
         options: { A: "Um cérebro brilhante mas com pouco juízo", B: "Já termos enfrentado a temida missão de depilação a laser no cu (porque coragem não nos falta)" },
         correct: "B",
+        background: "#228B22", // Verde floresta
     },
     {
         question: "Qual destas atividades já fizemos juntas...",
         options: { A: "Trocar videos e umas boas gargalhadas", B: "Discutir se o laser também podia polir o teu carro" },
         correct: "A",
+        background: "#FF6347", // Tom de vermelho brilhante
     },
     {
         question: "Já sabes quem sou eu?",
         options: { A: "Beatriz Duarte (a lendária amiga secreta)", B: "Outra pessoa que gostaria de ser tão fixe quanto eu" },
         correct: "A",
+        background: "#8B0000", // Vermelho escuro elegante
     },
 ];
 
@@ -48,7 +51,7 @@ function displayQuestion() {
     const question = questions[currentQuestionIndex];
 
     // Atualizar a imagem de fundo
-    document.body.style.backgroundImage = `url('${question.background}')`;
+    document.body.style.backgroundColor = question.background;
 
     // Mostrar a pergunta
     questionElement.textContent = question.question;

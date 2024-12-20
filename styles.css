@@ -3,6 +3,7 @@ body {
     text-align: center;
     margin: 0;
     padding: 10px;
+    transition: background-color 0.5s ease; /* Transição suave entre cores */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
