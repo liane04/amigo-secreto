@@ -4,7 +4,7 @@ const questions = [
         options: { A: "Fantástico como uma estrela de cinema", B: "Maravilhosa e sempre cheia de surpresas" },
         correct: "B",
         background: "#FF4C4C", // Vermelho natalício
-        image: "img/arvore3.png", // Caminho para a imagem
+        images: ["img/arvore.png", "img/harry3.png"], // Caminho para a imagem
     },
     {
         question: "A tua amiga secreta pertence...",
@@ -49,10 +49,10 @@ let currentQuestionIndex = 0;
 function displayQuestion() {
     const questionElement = document.getElementById("question");
     const optionsContainer = document.getElementById("options");
-    const imageContainer = document.getElementById("image-container"); // Contêiner para imagem
+    const imageContainer = document.getElementById("image-container"); // Contêiner para imagens
     const question = questions[currentQuestionIndex];
 
-    // Atualizar o fundo com a cor especificada
+    // Atualizar o fundo
     document.body.style.backgroundColor = question.background;
 
     // Mostrar a pergunta
@@ -70,18 +70,19 @@ function displayQuestion() {
         optionsContainer.appendChild(button);
     }
 
-    // Mostrar imagem, se houver
-    if (question.image) {
-        const img = document.createElement("img");
-        img.src = question.image;
-        img.alt = "Imagem associada à pergunta";
-        img.style.maxWidth = "300px"; // Tamanho da imagem
-        img.style.marginTop = "20px";
-        img.style.backgroundColor = "transparent"; // Força a transparência do fundo
-        img.style.border = "none"; // Remove qualquer borda
-        imageContainer.appendChild(img);
+    // Mostrar imagens se existirem
+    if (question.images) {
+        question.images.forEach(imagePath => {
+            const img = document.createElement("img");
+            img.src = imagePath;
+            img.alt = "Imagem associada à pergunta";
+            img.style.maxWidth = "150px"; // Ajusta o tamanho de cada imagem
+            img.style.margin = "10px"; // Espaçamento entre imagens
+            imageContainer.appendChild(img);
+        });
     }
 }
+
 
 function checkAnswer(selected) {
     const question = questions[currentQuestionIndex];
