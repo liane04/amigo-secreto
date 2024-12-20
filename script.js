@@ -9,37 +9,37 @@ const questions = [
         question: "A tua amiga secreta pertence...",
         options: { A: "A uma organização secreta chamada ROPE", B: "A um clube misterioso 'Clínicas NM' com superpoderes" },
         correct: "B",
-        background: "#4CAF50", // Verde típico de Natal
+        background: "#FF4C4C", // Vermelho natalício
     },
     {
         question: "Qual é o meu animal preferido...",
         options: { A: "Um pinguim estiloso e positive", B: "Um gato que acha que é o dono da casa" },
         correct: "B",
-        background: "#FFD700", // Dourado natalício
+        background: "#FF4C4C", // Vermelho natalício
     },
     {
         question: "O meu cabelo é...",
         options: { A: "Castanho e liso", B: "Castanho e encaracolado" },
         correct: "B",
-        background: "#FF5733", // Vermelho com tom quente
+        background: "#FF4C4C", // Vermelho natalício
     },
     {
         question: "Eu e tu temos em comum...",
         options: { A: "Um cérebro brilhante mas com pouco juízo", B: "Já termos enfrentado a temida missão de depilação a laser no cu (porque coragem não nos falta)" },
         correct: "B",
-        background: "#228B22", // Verde floresta
+        background: "#FF4C4C", // Vermelho natalício
     },
     {
         question: "Qual destas atividades já fizemos juntas...",
         options: { A: "Trocar videos e umas boas gargalhadas", B: "Discutir se o laser também podia polir o teu carro" },
         correct: "A",
-        background: "#FF6347", // Tom de vermelho brilhante
+        background: "#FF4C4C", // Vermelho natalício
     },
     {
         question: "Já sabes quem sou eu?",
         options: { A: "Beatriz Duarte (a lendária amiga secreta)", B: "Outra pessoa que gostaria de ser tão fixe quanto eu" },
         correct: "A",
-        background: "#8B0000", // Vermelho escuro elegante
+        background: "#FF4C4C", // Vermelho natalício
     },
 ];
 

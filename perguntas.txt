@@ -21,4 +21,12 @@ Já sabes quem sou eu?
     A. Beatriz Duarte (a lendária amiga secreta) (foto tua a) (resposta certa)
     B. Outra pessoa que gostaria de ser tão fixe quanto eu
 
+"#FF4C4C", // Vermelho natalício
+#4CAF50", // Verde típico de Natal
+"#FFD700", // Dourado natalício
+#FF5733", // Vermelho com tom quente
+#228B22", // Verde floresta
+#FF6347", // Tom de vermelho brilhante
+#8B0000", // Vermelho escuro elegante
+
 
