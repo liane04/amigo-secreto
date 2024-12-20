@@ -4,6 +4,7 @@ const questions = [
         options: { A: "Fantástico como uma estrela de cinema", B: "Maravilhosa e sempre cheia de surpresas" },
         correct: "B",
         background: "#FF4C4C", // Vermelho natalício
+        image: "img/arvore3.png", // Caminho para a imagem
     },
     {
         question: "A tua amiga secreta pertence...",
@@ -48,16 +49,18 @@ let currentQuestionIndex = 0;
 function displayQuestion() {
     const questionElement = document.getElementById("question");
     const optionsContainer = document.getElementById("options");
+    const imageContainer = document.getElementById("image-container"); // Contêiner para imagem
     const question = questions[currentQuestionIndex];
 
-    // Atualizar a imagem de fundo
+    // Atualizar o fundo com a cor especificada
     document.body.style.backgroundColor = question.background;
 
     // Mostrar a pergunta
     questionElement.textContent = question.question;
 
-    // Limpar opções anteriores
+    // Limpar opções e imagens anteriores
     optionsContainer.innerHTML = "";
+    imageContainer.innerHTML = "";
 
     // Criar botões para as opções
     for (const [key, value] of Object.entries(question.options)) {
@@ -65,6 +68,18 @@ function displayQuestion() {
         button.textContent = `${key}. ${value}`;
         button.onclick = () => checkAnswer(key);
         optionsContainer.appendChild(button);
+    }
+
+    // Mostrar imagem, se houver
+    if (question.image) {
+        const img = document.createElement("img");
+        img.src = question.image;
+        img.alt = "Imagem associada à pergunta";
+        img.style.maxWidth = "300px"; // Tamanho da imagem
+        img.style.marginTop = "20px";
+        img.style.backgroundColor = "transparent"; // Força a transparência do fundo
+        img.style.border = "none"; // Remove qualquer borda
+        imageContainer.appendChild(img);
     }
 }
 
