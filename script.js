@@ -46,6 +46,7 @@ const questions = [
         options: { A: "Beatriz Duarte (a lendária amiga secreta)", B: "Outra pessoa que gostaria de ser tão fixe quanto eu" },
         correct: "A",
         background: "#FF4C4C", // Vermelho natalício
+        image: "img/blur.JPEG", // Caminho para a imagem
     },
 ];
 
@@ -83,6 +84,16 @@ function displayQuestion() {
         img.style.width = "250px"; // Define a largura
         img.style.height = "auto"; // Mantém a proporção
         img.style.marginTop = "20px"; // Espaçamento superior
+         // Adicionar borda apenas para a imagem "blur.JPEG"
+        
+        if (question.image === "img/blur.JPEG" || question.image === "img/irma.png") {
+        img.style.border = "5px solidrgb(0, 0, 0)"; // Borda dourada
+        img.style.borderRadius = "10px"; // Borda arredondada
+        }
+        if (question.image === "img/harry4.png") {
+            img.style.width = "300px"; // Largura maior para o Harry
+            img.style.height = "auto"; // Mantém a proporção
+        }
         imageContainer.appendChild(img);
     }
 }
@@ -106,7 +117,7 @@ function checkAnswer(selected) {
                 displayQuestion(); // Mostrar a próxima pergunta
             }, 1000);
         } else {
-            message.textContent = "Parabéns! Terminaste o jogo!";
+            message.textContent = "Parabéns! Descobriste quem sou!";
         }
     } else {
         message.textContent = "Resposta errada. Tenta novamente!";
