@@ -86,7 +86,7 @@ function displayQuestion() {
         img.style.marginTop = "20px"; // Espaçamento superior
          // Adicionar borda apenas para a imagem "blur.JPEG"
         
-        if (question.image === "img/blur.JPEG" || question.image === "img/irma.png") {
+        if (question.image === "img/blur.JPEG" || question.image === "img/irma.jpg") {
         img.style.border = "5px solidrgb(0, 0, 0)"; // Borda dourada
         img.style.borderRadius = "10px"; // Borda arredondada
         }
@@ -99,10 +99,10 @@ function displayQuestion() {
 }
 
 
-
 function checkAnswer(selected) {
     const question = questions[currentQuestionIndex];
     const message = document.getElementById("message");
+    const imageContainer = document.getElementById("image-container");
 
     // Verificar se a resposta está correta
     if (selected === question.correct) {
@@ -117,13 +117,27 @@ function checkAnswer(selected) {
                 displayQuestion(); // Mostrar a próxima pergunta
             }, 1000);
         } else {
-            message.textContent = "Parabéns! Descobriste quem sou!";
+            // Exibir mensagem final e imagem
+            message.textContent = "Conseguiste! Descobriste quem sou!!!";
+            message.style.color = "#FFD700"; // Cor dourada
+
+            // Limpar o contêiner de opções e adicionar a imagem final
+            const finalImage = document.createElement("img");
+            finalImage.src = "img/irma.jpg"; // Caminho da imagem final
+            finalImage.alt = "Foto final";
+            finalImage.style.width = "300px"; // Tamanho da imagem
+            finalImage.style.height = "auto";
+            finalImage.style.marginTop = "20px";
+
+            imageContainer.innerHTML = ""; // Limpar imagens anteriores
+            imageContainer.appendChild(finalImage);
         }
     } else {
         message.textContent = "Resposta errada. Tenta novamente!";
         message.style.color = "red";
     }
 }
+
 
 // Inicializar o jogo
 displayQuestion();
