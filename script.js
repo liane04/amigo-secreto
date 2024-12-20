@@ -49,7 +49,7 @@ let currentQuestionIndex = 0;
 function displayQuestion() {
     const questionElement = document.getElementById("question");
     const optionsContainer = document.getElementById("options");
-    const imageContainer = document.getElementById("image-container"); // Contêiner para imagens
+    const imageContainer = document.getElementById("image-container");
     const question = questions[currentQuestionIndex];
 
     // Atualizar o fundo
@@ -70,17 +70,29 @@ function displayQuestion() {
         optionsContainer.appendChild(button);
     }
 
+    
     // Mostrar imagens se existirem
     if (question.images) {
         question.images.forEach(imagePath => {
             const img = document.createElement("img");
             img.src = imagePath;
             img.alt = "Imagem associada à pergunta";
-            img.style.maxWidth = "150px"; // Ajusta o tamanho de cada imagem
+
+            // Ajustar estilos diretamente com base no nome da imagem
+            if (imagePath === "img/harry3.png") {
+                img.style.width = "100px"; // Largura para o Harry
+                img.style.height = "100px"; // Altura proporcional
+            } else if (imagePath === "img/arvore.png") {
+                img.style.width = "150px"; // Largura para a árvore de Natal
+                img.style.height = "200px"; // Altura fixa para a árvore
+            }
+
             img.style.margin = "10px"; // Espaçamento entre imagens
             imageContainer.appendChild(img);
         });
     }
+
+
 }
 
 
